@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->id('id_kelas');
             $table->string('nama_kelas', 50);
-            $table->$table->enum('tingkat', ['X', 'XI', 'XII']); // Tingkat kelas untuk SMA atau sederajat
+            $table->enum('tingkat', ['X', 'XI', 'XII']); // Tingkat kelas untuk SMA atau sederajat
             $table->year('tahun_mulai'); // Tahun ajaran mulai
             $table->year('tahun_selesai'); // Tahun ajaran selesai
 
