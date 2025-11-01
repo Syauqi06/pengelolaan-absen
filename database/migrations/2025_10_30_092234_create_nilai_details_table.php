@@ -26,7 +26,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
 
-            $table->decimal('nilai', 5, 2);
+            $table->decimal('nilai', 5, 2)->default(0);
             $table->timestamp('tanggal_input')->useCurrent();
             $table->timestamps();
         });

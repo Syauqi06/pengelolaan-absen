@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Jenis_nilai extends Model
+class LogAktivitas extends Model
 {
     use HasFactory;
 }

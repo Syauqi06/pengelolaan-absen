@@ -38,7 +38,7 @@ class Guru extends Model
     // relasi dengan tabel MataPelajaran
     public function mataPelajaran()
     {
-        return $this->hasMany(Mata_pelajaran::class, 'id_guru', 'id_guru');
+        return $this->hasMany(MataPelajaran::class, 'id_guru', 'id_guru');
     }
 
     // relasi dengan tabel Nilai    
