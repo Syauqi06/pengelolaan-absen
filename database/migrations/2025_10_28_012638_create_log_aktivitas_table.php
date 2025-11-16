@@ -18,25 +18,14 @@ return new class extends Migration
                   ->constrained('penggunas', 'id_pengguna')
                   ->onUpdate('cascade')
                   ->onDelete('restrict');
-            
-            // Jenis aktivitas yang dilakukan
-            $table->enum('jenis_aktivitas', [
-                'login',
-                'logout',
-                'tambah_data',
-                'update_data',
-                'hapus_data',
-                'backup_data',
-                'restore_data'
-            ])->default('login');
 
-            $table->text('data_lama')->nullable();
-            $table->text('data_baru')->nullable();
-            $table->string('ip_address', 45)->nullable();
-            $table->string('user_agent')->nullable();
+            $table->string('jenis_aktivitas', 50);
+            $table->json('data_lama')->nullable();
+            $table->json('data_baru')->nullable();
+            $table->ipAddress('ip_address')->nullable();
+            $table->text('user_agent')->nullable();
             $table->timestamp('waktu_aktivitas')->useCurrent();
-            $table->timestamps();
-
+            
             // Indexes untuk optimasi pencarian
             $table->index('id_pengguna');
             $table->index('jenis_aktivitas');

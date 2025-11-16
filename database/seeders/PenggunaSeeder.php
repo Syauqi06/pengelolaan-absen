@@ -16,7 +16,7 @@ class PenggunaSeeder extends Seeder
         DB::table('penggunas')->insert([
             [
                 'username' => 'admin',
-                'password_hash' => Hash::make('admin123'),
+                'password' => Hash::make('admin123'),
                 'status_aktif' => 'aktif',
                 'role_id' => 1, // Admin
                 'created_at' => now(),
@@ -24,7 +24,7 @@ class PenggunaSeeder extends Seeder
             ],
             [
                 'username' => 'guru01',
-                'password_hash' => Hash::make('guru123'),
+                'password' => Hash::make('guru123'),
                 'status_aktif' => 'aktif',
                 'role_id' => 2,
                 'created_at' => now(),
@@ -32,7 +32,7 @@ class PenggunaSeeder extends Seeder
             ],
             [
                 'username' => 'murid01',
-                'password_hash' => Hash::make('murid123'),
+                'password' => Hash::make('murid123'),
                 'status_aktif' => 'aktif',
                 'role_id' => 3,
                 'created_at' => now(),

@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id('id_murid');
             $table->string('nama', 100);
             $table->string('nis', 20)->unique();
+            $table->string('nisn', 20)->unique()->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->enum('jenis_kelamin', ['L', 'P'])->nullable();
             $table->string('foto', 255)->nullable();
-            $table->string('alamat', 255)->nullable();
+            $table->text('alamat')->nullable();
             $table->string('telepon', 15)->nullable();
 
             // Relasi dengan tabel pengguna

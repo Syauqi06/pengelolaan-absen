@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mata_pelajarans', function (Blueprint $table) {
             $table->id('id_mapel');
-            $table->string('nama_mapel', 100);
+            $table->string('nama_mapel', 100)->unique();
             $table->unsignedTinyInteger('kkm')->default(80); // Kriteria Ketuntasan Minimal
 
             // Relasi dengan tabel guru

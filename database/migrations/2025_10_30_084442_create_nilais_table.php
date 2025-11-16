@@ -36,9 +36,9 @@ return new class extends Migration
             $table->year('tahun_ajaran');
             $table->enum('keterangan', ['Tuntas', 'Belum Tuntas'])->nullable();
             $table->decimal('rata_rata', 5, 2)->nullable()->default(0);
-            $table->timestamp('tanggal_input')->useCurrent();
             $table->text('catatan_guru')->nullable();
             $table->timestamps();
+            $table->unique(['id_murid', 'id_mapel', 'semester', 'tahun_ajaran']);
         });
     }
 

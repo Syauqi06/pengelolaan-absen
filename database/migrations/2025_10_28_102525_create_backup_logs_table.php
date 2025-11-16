@@ -21,13 +21,12 @@ return new class extends Migration
                 ->onDelete('restrict');
             
             $table->string('nama_file', 255);
-            $table->string('lokasi_file', 255); // Path atau lokasi penyimpanan file backup
+            $table->text('lokasi_file', 255); // Path atau lokasi penyimpanan file backup
             $table->timestamp('waktu_backup')->useCurrent();
             $table->bigInteger('ukuran_file')->nullable(); // Ukuran file dalam bytes
-            $table->string('ip_address', 45)->nullable(); // untuk menyimpan alamat IP pengguna
+            $table->ipAddress('ip_address')->nullable(); // untuk menyimpan alamat IP pengguna
             $table->enum('status_backup', ['berhasil', 'gagal'])->default('berhasil'); // Status backup
             $table->text('pesan_log')->nullable(); // Pesan log tambahan atau error jika ada
-            $table->timestamps();
         });
     }
 

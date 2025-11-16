@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('jenis_nilais', function (Blueprint $table) {
             $table->id('id_jenis');
-            $table->string('nama_jenis', 100); // Misal: UTS, UAS, Tugas
+            $table->string('nama_jenis', 100)->unique(); // Misal: UTS, UAS, Tugas
 
             //bobot nilai untuk jenis nilai, misal: UTS 30%, UAS 40%, Tugas 30%
             $table->unsignedTinyInteger('bobot_nilai')->default(0);

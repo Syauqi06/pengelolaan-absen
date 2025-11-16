@@ -17,6 +17,7 @@ return new class extends Migration
             $table->enum('tingkat', ['X', 'XI', 'XII']); // Tingkat kelas untuk SMA atau sederajat
             $table->year('tahun_mulai'); // Tahun ajaran mulai
             $table->year('tahun_selesai'); // Tahun ajaran selesai
+            $table->unique(['nama_kelas', 'tingkat', 'tahun_mulai', 'tahun_selesai']); // Menjamin kombinasi unik
 
             // Relasi dengan tabel guru
             $table->foreignId('id_guru')

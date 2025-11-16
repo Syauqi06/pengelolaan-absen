@@ -27,8 +27,8 @@ return new class extends Migration
                 ->onDelete('restrict');
 
             $table->decimal('nilai', 5, 2)->default(0);
-            $table->timestamp('tanggal_input')->useCurrent();
             $table->timestamps();
+            $table->unique(['id_nilai', 'id_jenis']);
         });
     }
 

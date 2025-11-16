@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('nama', 100);
             $table->string('nip', 20)->unique();
             $table->string('foto', 255)->nullable();
-            $table->string('alamat', 255)->nullable();
+            $table->text('alamat')->nullable();
             $table->string('telepon', 15)->nullable();
             $table->string('email', 100)->nullable()->unique();
             $table->date('tanggal_lahir')->nullable();
